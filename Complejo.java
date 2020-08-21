@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Complejo {
   private float real;
@@ -50,10 +51,21 @@ public class Complejo {
   public float getReal(){
     return this.real;
   }
-  public void leer(){
+ public void leer(){
+    System.out.print("ingrese los dos numeros separados por un espacio: ");
     Scanner s=new Scanner(System.in);
-    real=s.nextFloat();
-    imag=s.nextFloat();
+    try
+    {
+      Complejo c=new Complejo();
+      this.real=s.nextFloat();
+      this.imag=s.nextFloat();
+    }
+    catch(InputMismatchException ex)
+    {
+      System.out.println("\n(No es un numero, por defecto se asigo un 1 ");
+      this.real=1;
+      this.imag=1;
+    }
   }
   public void imprimir(){
     if(real==0){

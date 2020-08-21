@@ -62,7 +62,7 @@ public class Complejo {
     }
     catch(InputMismatchException ex)
     {
-      System.out.println("\n(No es un numero, por defecto se asigo un 1 ");
+      System.out.println("(No es un numero, por defecto se asigo un 1 ");
       this.real=1;
       this.imag=1;
     }
